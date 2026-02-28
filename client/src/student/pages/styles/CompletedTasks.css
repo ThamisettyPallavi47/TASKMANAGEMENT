@@ -1,0 +1,150 @@
+/* ==============================
+   COMPLETED TASKS PAGE
+   ============================== */
+
+.completed-tasks-container {
+  padding: 0;
+  /* Let layout handle padding */
+  width: 100%;
+  text-align: left;
+}
+
+.completed-tasks-container h2 {
+  text-align: left;
+  margin-bottom: 5px;
+  /* Reduced bottom margin for subtitle */
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.task-filters {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.task-filters button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.task-filters button.active {
+  background: #8b5cf6;
+  /* Primary Purple */
+  color: white;
+}
+
+/* ... */
+
+/* ==============================
+   COMPLETED TASK GRID
+   ============================== */
+
+.completed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  /* Standard: 24px */
+}
+
+/* ==============================
+   COMPLETED TASK CARD
+   ============================== */
+
+.completed-card {
+  background: #ffffff;
+  border-radius: 20px;
+  /* Standard: 20px */
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  /* Standard shadow */
+  border: 1px solid #f3f4f6;
+  /* Match MyTasks */
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  /* Match MyTasks */
+  transition: transform 0.2s ease;
+}
+
+.completed-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ==============================
+   CARD HEADER
+   ============================== */
+
+.completed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.completed-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ==============================
+   TASK TYPE BADGES
+   ============================== */
+
+.completed-header span {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.completed-header span.personal {
+  background: #e6e4ff;
+  color: #6c63ff;
+}
+
+.completed-header span.admin {
+  background: #e3f2fd;
+  color: #2196f3;
+}
+
+/* ==============================
+   TASK CONTENT
+   ============================== */
+
+.completed-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* ==============================
+   COMPLETION DATE
+   ============================== */
+
+.completed-date {
+  font-size: 12px;
+  color: #4caf50;
+  font-weight: 600;
+  margin-top: auto;
+  /* Push to bottom */
+}

@@ -1,0 +1,101 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #7c7cfb;
+  margin-bottom: 30px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.menu li {
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: #7c7cfb;
+  color: #fff;
+}
+
+.add-task-btn {
+  margin-top: auto;
+  padding: 12px;
+  border: none;
+  background: #7c7cfb;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: #f8fafc;
+  /* Ensure background is consistent */
+  overflow-x: hidden;
+}
+
+.menu li {
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.menu li:hover {
+  background: #eef0ff;
+  color: #7c7cfb;
+}
+
+/* 🔥 ACTIVE PAGE (BLUE) */
+.menu li.active {
+  background: #7c7cfb;
+  color: #ffffff;
+}
+
+.add-task-btn {
+  margin-top: auto;
+  padding: 12px;
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.add-task-btn:hover {
+  background: #7a49e4;
+}

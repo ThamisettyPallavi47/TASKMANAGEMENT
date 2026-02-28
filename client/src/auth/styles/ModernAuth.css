@@ -1,0 +1,303 @@
+/* Main Container: Centered Wrapper */
+.modern-auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #f8f9fa;
+    /* Light gray page background */
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
+
+/* The Card Itself */
+.auth-card-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left Panel: Blue Gradient Branding */
+.auth-left {
+    flex: 1;
+    background: linear-gradient(135deg, #6c63ff 0%, #4facfe 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Center horizontally */
+    text-align: center;
+    /* Center text */
+    padding: 3rem;
+    position: relative;
+}
+
+.auth-brand {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.brand-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.auth-left h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    max-width: 80%;
+    /* Limit width for cleaner centering */
+}
+
+.auth-left p {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 80%;
+    /* Limit width for cleaner centering */
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.auth-features {
+    display: flex;
+    gap: 20px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Right Panel: Form Area */
+.auth-right {
+    flex: 1.2;
+    background: white;
+    display: flex;
+    /* align-items: center;  <-- Removed to prevent clipping */
+    /* justify-content: center; <-- Removed */
+    padding: 3rem;
+    overflow-y: auto;
+    /* Allow scrolling */
+
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+/* Hide Scrollbar for Chrome/Safari/Opera */
+.auth-right::-webkit-scrollbar {
+    display: none;
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+    /* <--- Valid centering method for flex items that might overflow */
+}
+
+.auth-form-container h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.sub-text {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Form Styling */
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 12px 15px;
+    padding-left: 40px;
+    /* Space for icon */
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s;
+    color: #333;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    border-color: #6c63ff;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #999;
+}
+
+/* Form Footer */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-btn,
+.signup-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #6c63ff 0%, #4facfe 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #4facfe;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.bottom-copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+.error-message {
+    background-color: #fff2f2;
+    color: #d9534f;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ffcccc;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .auth-card-wrapper {
+        flex-direction: column;
+        height: auto;
+        min-height: 600px;
+    }
+
+    .auth-left {
+        display: none;
+        /* Hide left panel on mobile to keep it clean */
+    }
+
+    .auth-right {
+        padding: 2rem;
+    }
+
+    .modern-auth-container {
+        padding: 0;
+        background: white;
+        /* Full white on mobile */
+    }
+
+    .auth-card-wrapper {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}

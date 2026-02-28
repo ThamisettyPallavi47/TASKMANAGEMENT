@@ -1,0 +1,188 @@
+/* Subtitle */
+.subtitle {
+  color: #a3aed0;
+  font-size: 14px;
+  margin-top: 0px;
+  /* Remove negative margin to fix overlap */
+  margin-bottom: 20px;
+}
+
+/* Header Section */
+.header-section h2 {
+  margin-bottom: 5px;
+}
+
+/* Filter buttons */
+.task-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.task-filters button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #a3aed0;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.task-filters .active {
+  background: #6c63ff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+}
+
+/* Task Sections */
+.task-section {
+  margin-bottom: 40px;
+}
+
+.task-section h3 {
+  color: #2b3674;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  /* Standard: 24px */
+}
+
+/* Card */
+.progress-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  /* Standard shadow */
+  border: 1px solid #f3f4f6;
+  /* Match MyTasks */
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  /* Match MyTasks */
+}
+
+/* Header */
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #2b3674;
+}
+
+.personal {
+  background: #e6f7ff;
+  color: #0095ff;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.admin {
+  background: #f4f7fe;
+  color: #4318ff;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Progress bar */
+.progress-bar-wrapper {
+  position: relative;
+  height: 8px;
+  /* Thinner bar */
+  background: #eff4fb;
+  border-radius: 10px;
+  margin: 10px 0 25px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #6c63ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Text on right */
+  position: relative;
+}
+
+.progress-text {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  color: #2b3674;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Slider */
+.progress-bar-wrapper input[type="range"] {
+  position: absolute;
+  top: -6px;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #6c63ff;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Button */
+.update-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 12px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.update-btn:hover:not(:disabled) {
+  background: #5b54d6;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+}
+
+.update-btn:disabled {
+  background: #e0e0e0;
+  color: #a3a3a3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+}

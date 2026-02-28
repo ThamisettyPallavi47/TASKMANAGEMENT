@@ -1,0 +1,109 @@
+.student-profile-container {
+    position: absolute;
+    top: 24px;
+    right: 2px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+}
+
+.student-profile-container:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.profile-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.2;
+}
+
+.portal-name-large {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.student-name-small {
+    font-size: 11px;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-avatar-square {
+    width: 42px;
+    height: 42px;
+    background: #6366f1;
+    /* Indigo to match student theme */
+    color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+}
+
+/* DROPDOWN */
+.profile-dropdown {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    width: 220px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+    animation: fadeInDown 0.2s ease;
+    z-index: 1001;
+}
+
+.profile-dropdown p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.profile-dropdown strong {
+    color: #111827;
+}
+
+.logout-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #fecaca;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

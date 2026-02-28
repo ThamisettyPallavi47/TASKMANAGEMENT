@@ -1,0 +1,310 @@
+.add-task-container {
+  background: #ffffff;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 20px;
+  /* Standard: 20px */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  /* Standard shadow */
+}
+
+.add-task-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-form input,
+.task-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.task-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.task-form button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #574fe0;
+}
+
+
+.success-message {
+  background-color: #e6f9f0;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+/* FULL SCREEN CENTER */
+.add-task-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fb;
+}
+
+/* CARD */
+.add-task-container {
+  background: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  /* 🎯 Animation */
+  animation: slideFadeIn 0.6s ease-out;
+}
+
+.add-task-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* FORM */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-form input,
+.task-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.task-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* BUTTON */
+.task-form button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.task-form button:hover {
+  background-color: #574fe0;
+  transform: translateY(-2px);
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  background-color: #e6f9f0;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 600;
+
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 🎯 Smooth hover animation for task card */
+.add-task-container {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.add-task-container:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* PAGE WRAPPER */
+.add-task-wrapper {
+  min-height: 100vh;
+  background: #f4f6fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+.add-task-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* TITLE */
+.add-task-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* FORM */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INPUTS & TEXTAREA */
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  outline: none;
+  background: #fafafa;
+}
+
+.task-form textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+/* FOCUS EFFECT */
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: #6c63ff;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+/* DATE FIELD WRAPPER */
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.date-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* DATE INPUT */
+.date-field input[type="date"] {
+  cursor: pointer;
+  background: #fafafa;
+}
+
+/* BUTTON */
+.task-form button {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6c63ff, #5a54e6);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.35);
+}
+
+.task-form button:active {
+  transform: scale(0.98);
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .add-task-container {
+    padding: 24px;
+  }
+
+  .add-task-container h2 {
+    font-size: 20px;
+  }
+}

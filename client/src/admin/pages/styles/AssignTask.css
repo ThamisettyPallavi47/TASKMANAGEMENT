@@ -1,0 +1,250 @@
+/* SAME WRAPPER AS STUDENT ADD TASK */
+.add-task-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.add-task-container {
+  background: #ffffff;
+  padding: 30px;
+  width: 420px;
+  border-radius: 16px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* INPUTS */
+.task-form input,
+.task-form textarea,
+.task-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+/* DATE */
+.date-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-field label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* BUTTON */
+.task-form button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #7c7cfb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+  margin-top: 12px;
+  color: #16a34a;
+  font-size: 14px;
+}
+/* ================= PAGE LOAD ANIMATION ================= */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.add-task-container {
+  animation: fadeSlideUp 0.6s ease-out;
+}
+
+/* ================= INPUT FOCUS ANIMATION ================= */
+.task-form input,
+.task-form textarea,
+.task-form select {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+  border-color: #7c7cfb;
+  box-shadow: 0 0 0 2px rgba(124, 124, 251, 0.2);
+}
+
+/* ================= BUTTON ANIMATION ================= */
+.task-form button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(124, 124, 251, 0.3);
+}
+
+.task-form button:active {
+  transform: scale(0.97);
+}
+
+/* ================= SUCCESS MESSAGE ANIMATION ================= */
+@keyframes successPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-message {
+  animation: successPop 0.4s ease-out;
+}
+.multi-select {
+  position: relative;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.multi-select-input {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.multi-select-input:hover {
+  border-color: #6c63ff;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.multi-select-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f3f4ff;
+}
+
+.dropdown-item input {
+  cursor: pointer;
+}
+
+/* ===== MULTI SELECT DROPDOWN ===== */
+
+.multi-select {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.field-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.multi-select-input {
+  border: 1px solid #d0d7e2;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.multi-select-input:hover {
+  border-color: #6c63ff;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #555;
+}
+
+/* 🔥 THIS IS THE KEY FIX */
+.multi-select-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #d0d7e2;
+  border-radius: 8px;
+  z-index: 999; /* 👈 prevents layout breaking */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px 0;
+}
+
+/* ===== DROPDOWN ITEM FIX ===== */
+.dropdown-item {
+  display: grid;
+  grid-template-columns: 20px 1fr; /* checkbox + text */
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.dropdown-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.dropdown-item span {
+  white-space: normal;      /* allow wrapping */
+  word-break: break-word;
+}
+
+.dropdown-item:hover {
+  background-color: #f4f6ff;
+}

@@ -1,0 +1,315 @@
+.mytasks-container {
+  padding: 0;
+  /* Let layout handle padding */
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  /* Force full width */
+  text-align: left;
+  /* Force left alignment */
+}
+
+.mytasks-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  /* Align contents to left corner */
+  justify-content: flex-start !important;
+  /* Force start */
+  width: 100%;
+  /* Force full width */
+  gap: 15px;
+  /* Tighter gap */
+  /* Space between text and filters */
+  margin-bottom: 30px;
+  /* Standard: 30px */
+}
+
+.mytasks-header-content h2 {
+  font-size: 24px;
+  /* Match StudentDashboard */
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 5px 0;
+  /* Strict margin shorthand */
+  text-align: left !important;
+  /* Force left */
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 400;
+  margin-top: 0;
+  text-align: left !important;
+  display: block;
+  width: 100%;
+}
+
+/* ================= TABS ================= */
+.task-filters {
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-start;
+  /* Force start */
+  width: fit-content;
+  /* Only take necessary width */
+  gap: 4px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #111827;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+
+/* ================= SECTIONS ================= */
+.tasks-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accent-bar {
+  width: 4px;
+  height: 24px;
+  border-radius: 2px;
+}
+
+.personal-bar {
+  background: #10b981;
+}
+
+/* Green */
+.admin-bar {
+  background: #f59e0b;
+}
+
+/* Amber/Orange */
+
+.section-title h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.count-badge {
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+
+/* ================= GRID ================= */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+
+/* ================= TASK CARD MODERN ================= */
+.task-card-modern {
+  background: #ffffff;
+  border-radius: 20px;
+  /* Standard: 20px */
+  padding: 24px;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 220px;
+}
+
+.task-card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.task-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.badge-personal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-admin {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+
+.task-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.task-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  flex-grow: 1;
+  /* Pushes meta down */
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  /* Standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.task-meta {
+  margin-bottom: 16px;
+}
+
+.date-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+
+/* ================= PROGRESS BAR ================= */
+.task-progress-row {
+  margin-top: auto;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.progress-label .percent {
+  color: #6366f1;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+
+/* ================= GHOST CARD (ADD TASK) ================= */
+.add-task-ghost {
+  border: 2px dashed #e5e7eb;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-height: 220px;
+  transition: all 0.2s;
+  background: #f9fafb;
+}
+
+.add-task-ghost:hover {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+}
+
+.ghost-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #9ca3af;
+}
+
+.ghost-content span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.add-task-ghost:hover .ghost-content {
+  color: #6366f1;
+}
+
+.empty-msg {
+  color: #9ca3af;
+  font-size: 14px;
+  font-style: italic;
+}
