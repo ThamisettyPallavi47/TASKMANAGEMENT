@@ -73,3 +73,7 @@ app.listen(PORT, () => {
   console.log("Gemini key loaded:", !!process.env.GEMINI_API_KEY);
 
 });
+
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully 🚀");
+});
