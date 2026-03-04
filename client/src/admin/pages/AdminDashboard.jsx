@@ -65,7 +65,7 @@ const AdminDashboard = () => {
   const fetchAnalytics = async () => {
     try {
       const res = await axios.get(
-        "https://taskmanagement-w3gy.onrender.com//analytics/admin",
+        "https://taskmanagement-w3gy.onrender.com/api/analytics/admin",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
