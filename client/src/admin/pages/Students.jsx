@@ -39,7 +39,7 @@ const Students = () => {
     try {
       // Fallback to empty array if API fails or returns non-array
       const res = await axios.get(
-        "http://localhost:5000/api/admin/students",
+        "https://taskmanagement-w3gy.onrender.com/api/admin/students",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -54,7 +54,7 @@ const Students = () => {
   const fetchAdminTasks = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/tasks",
+        "https://taskmanagement-w3gy.onrender.com/api/admin/tasks",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
