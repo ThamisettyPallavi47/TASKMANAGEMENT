@@ -93,6 +93,33 @@ const StudentDashboard = () => {
     return map;
   }, [filteredTasks]);
 
+  /* ================= TOP 4 WORK PROGRESS ================= */
+/* ================= TOP 4 WORK PROGRESS ================= */
+const topProgressTasks = useMemo(() => {
+  if (!filteredTasks) return [];
+
+  return [...filteredTasks]
+    .filter(t => t.end && t.progress !== 100)   // remove completed tasks
+    .sort((a, b) => new Date(a.end) - new Date(b.end)) // nearest deadline first
+    .slice(0, 4); // only first 4 tasks
+}, [filteredTasks]);
+
+ /* ================= TASK PERCENTAGE DATA ================= */
+
+const taskPercentageData = useMemo(() => {
+
+  const completedPercent = totalTasks ? (completed / totalTasks) * 100 : 0;
+  const progressPercent = totalTasks ? (inProgress / totalTasks) * 100 : 0;
+  const pendingPercent = totalTasks ? (pending / totalTasks) * 100 : 0;
+
+  return [
+    completedPercent.toFixed(1),
+    progressPercent.toFixed(1),
+    pendingPercent.toFixed(1)
+  ];
+
+}, [completed, inProgress, pending, totalTasks]);
+
   const openSummaryTasks = (status) => {
     const params = new URLSearchParams();
     if (status) params.set("status", status);
@@ -108,12 +135,19 @@ const StudentDashboard = () => {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const today = new Date().setHours(0,0,0,0);
 
+ 
+
   return (
     <StudentLayout>
       <div className="dashboard-header-row">
         <div className="header-text">
           <h2>Student Dashboard</h2>
-          <p>Welcome back, {dashboardData.studentName || "Student"}! Here's what's happening today.</p>
+          
+            <p>
+  Welcome back,{" "}
+  <strong>{(dashboardData.studentName || "Student").toUpperCase()}</strong>
+  {" "}! Here's what's happening today.
+</p>
 
           <div className="header-tabs">
             {["ALL", "PERSONAL", "ADMIN"].map((type) => (
@@ -143,7 +177,7 @@ const StudentDashboard = () => {
           <div className="stat-content">
             <h3>In Progress</h3>
             <span className="stat-number">{inProgress}</span>
-            <p className="stat-sub">🕒 2 due today</p>
+            <p className="stat-sub" color="#fff">🕒 2 due today</p>
           </div>
         </div>
 
@@ -264,22 +298,23 @@ const StudentDashboard = () => {
         <div className="grid-item donut-box">
           <h3>Task Percentage</h3>
           <div className="donut-wrapper">
+            
             <Doughnut
-              data={{
-                datasets: [{
-                  data: [75, 25], // Mock 75% done
-                  backgroundColor: ["#10b981", "#e5e7eb"], // Green, Gray
-                  cutout: "80%",
-                  circumference: 360,
-                }]
-              }}
-              options={{
-                plugins: { tooltip: { enabled: false } }
-              }}
-            />
+data={{
+datasets:[{
+data:taskPercentageData,
+backgroundColor:[
+"#10b981",
+"#3b82f6",
+"#ef4444"
+],
+cutout:"80%"
+}]
+}}
+/>
             <div className="donut-center-text">
-              <span className="percent">75%</span>
-              <span className="label">DONE</span>
+              {/* <span className="percent">75%</span> */}
+              <span className="label">DONE</span> 
             </div>
           </div>
 
@@ -289,30 +324,94 @@ const StudentDashboard = () => {
             <div className="legend-item"><span className="dot red"></span> Pending</div>
           </div>
         </div>
+              {/* WORK PROGRESS */}
+ <div className="progress-status-wrapper">             
+<div className="work-progress-section">
 
-        {/* ROW 2 RIGHT: WORKING STATUS */}
-        <div className="grid-item status-box-modern">
-          <h3>Working Status</h3>
+  <div className="work-progress-header">
+    <h3>Work Progress</h3>
+  </div>
 
-          <div className="status-toggle-row">
-            <div className="status-indicator">
-              <span className={`status-dot ${isActive ? "active-dot" : ""}`}></span>
-              <span>Active</span>
-            </div>
+  <div className="work-progress-grid">
 
-            <label className="switch">
-              <input type="checkbox" checked={isActive} onChange={() => setIsActive(!isActive)} />
-              <span className="slider round"></span>
-            </label>
-          </div>
+    {topProgressTasks.map(task => (
+      <div key={task._id} className="progress-task-card">
 
-          <div className="status-indicator idle-row">
-            <span className="status-dot idle-dot"></span>
-            <span>Idle</span>
-            <span className="idle-time">Started 2h ago</span>
-          </div>
+        <div className="progress-task-header">
+          <span className="task-title">{task.title}</span>
+          <span className="task-percent">{task.progress}%</span>
         </div>
 
+        <div className="progress-bar-bg">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${task.progress}%` }}
+          ></div>
+        </div>
+
+        <div className="task-due">
+          Due: {new Date(task.end).toISOString().split("T")[0]}
+        </div>
+
+      </div>
+    ))}
+
+  </div>
+
+</div>
+        {/* ROW 2 RIGHT: WORKING STATUS */}
+        
+        {/* ROW 2 RIGHT: WORKING STATUS */}
+<div className="grid-item status-box-modern">
+  <h3>Working Status</h3>
+
+  {/* PIE CHART */}
+  <div className="status-chart">
+    <Doughnut
+      data={{
+        labels: ["Active", "Idle"],
+        datasets: [
+          {
+            data: [isActive ? 70 : 30, isActive ? 30 : 70],
+            backgroundColor: ["#10b981", "#e5e7eb"],
+            borderWidth: 0,
+          },
+        ],
+      }}
+      options={{
+        cutout: "70%",
+        plugins: {
+          legend: { display: false },
+        },
+      }}
+    />
+  </div>
+
+  {/* ACTIVE TOGGLE */}
+  <div className="status-toggle-row">
+    <div className="status-indicator">
+      <span className={`status-dot ${isActive ? "active-dot" : ""}`}></span>
+      <span>Active</span>
+    </div>
+
+    <label className="switch">
+      <input
+        type="checkbox"
+        checked={isActive}
+        onChange={() => setIsActive(!isActive)}
+      />
+      <span className="slider round"></span>
+    </label>
+  </div>
+
+  {/* IDLE STATUS */}
+  <div className="status-indicator idle-row">
+    <span className="status-dot idle-dot"></span>
+    <span>Idle</span>
+    <span className="idle-time">Started 2h ago</span>
+  </div>
+</div>
+      </div>
       </div>
 
     </StudentLayout>

@@ -67,6 +67,7 @@ router.get("/admin", authMiddleware, async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+
 });
 
 router.get("/admin/monthly", authMiddleware, async (req, res) => {
@@ -117,5 +118,7 @@ router.get("/admin/monthly", authMiddleware, async (req, res) => {
     res.status(500).json({ message: "Monthly analytics failed" });
   }
 });
+
+
 
 module.exports = router;

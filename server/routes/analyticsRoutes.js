@@ -90,14 +90,19 @@ router.get("/admin", authMiddleware, async (req, res) => {
     });
 
     /* ================= RECENT ADMIN TASKS ================= */
+    // const recentAdminTasks = await Task.find({
+    //   taskType: "ADMIN",
+    //   progress: 100,
+    // })
+    //   .sort({ updatedAt: -1 })
+    //   .limit(5)
+    //   .select("title studentId endDate updatedAt");
     const recentAdminTasks = await Task.find({
-      taskType: "ADMIN",
-      progress: 100,
-    })
-      .sort({ updatedAt: -1 })
-      .limit(5)
-      .select("title studentId endDate updatedAt");
-
+  taskType: "ADMIN"
+})
+  .sort({ updatedAt: -1 })
+  .limit(5)
+  .select("title studentId progress updatedAt");
     res.json({
       adminSummary,
       studentWiseAdminTasks,

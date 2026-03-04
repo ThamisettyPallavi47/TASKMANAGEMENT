@@ -10,11 +10,10 @@
   align-items: flex-start !important;
   justify-content: flex-start !important;
   text-align: left !important;
-  gap: 8px;
-  margin-bottom: 30px;
+  gap: 4px;              /* reduced gap */
+  margin-bottom: 6px;   /* reduced from 30px */
   width: 100%;
 }
-
 .analytics-container h2 {
   text-align: left !important;
   margin: 0;
@@ -202,4 +201,91 @@
     height: auto;
     min-height: 300px;
   }
+}
+/* SUMMARY CARDS */
+.analytics-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; /* reduced gap */
+  margin-bottom: 24px;
+}
+
+.analytics-cards .card {
+  border-radius: 14px;
+  padding: 16px 18px; /* reduced padding */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90px; /* reduced height */
+  box-shadow: 0 3px 5px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Content */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Label */
+.card-label {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Value */
+.card-value {
+  font-size: 26px; /* reduced from 48px */
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+/* Tag */
+.card-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+.chart-box {
+  background: #ffffff;
+  padding: 18px;            /* reduced from 24px */
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  height: 200px;            /* reduced from 350px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-box h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;          /* reduced from 18px */
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;      /* reduced spacing */
+}
+
+/* Smaller Pie & Doughnut */
+.chart-box canvas {
+  max-height: 170px !important;   /* reduced from 250px */
+  max-width: 100% !important;
+}
+/* PROGRESS TREND CHART */
+.chart-box.full {
+  height: 200px; /* reduced from 400px */
+  padding: 16px;
+}
+
+.chart-box.full canvas {
+  max-height: 180px !important; /* reduced chart size */
 }

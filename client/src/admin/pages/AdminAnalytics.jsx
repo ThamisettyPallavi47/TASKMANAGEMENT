@@ -105,10 +105,7 @@ const AdminAnalytics = () => {
         </div>
 
         <div className="analytics-filters">
-          <button className="date-picker-btn">
-            <Calendar size={16} />
-            {dateRange}
-          </button>
+          
 
           <select
             value={selectedStudent}
@@ -139,8 +136,8 @@ const AdminAnalytics = () => {
             </div>
           </div>
           <h3>{summary.total}</h3>
-          <span className="stat-trend text-green">
-            <span className="trend-arrow">↗</span> 12% increase from last week
+          <span className="stat-sub text-green">
+            <span className="stat-sub text-green">↗</span> 12% increase from last week
           </span>
         </div>
 
@@ -171,7 +168,7 @@ const AdminAnalytics = () => {
             </div>
           </div>
           <h3>{summary.inProgress}</h3>
-          <span className="stat-sub text-gray">Actively being worked on</span>
+          <span className="stat-sub text-blue">Actively being worked on</span>
         </div>
 
         {/* COMPLETED */}
@@ -186,8 +183,8 @@ const AdminAnalytics = () => {
             </div>
           </div>
           <h3>{summary.completed}</h3>
-          <span className="stat-trend text-green">
-            <span className="trend-arrow">✓</span> {completionRate}% completion rate
+          <span className="stat-sub text-green">
+            <span className="stat-sub text-green">✓</span> {completionRate}% completion rate
           </span>
         </div>
       </div>

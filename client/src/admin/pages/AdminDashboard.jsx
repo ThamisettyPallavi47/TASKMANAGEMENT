@@ -20,21 +20,23 @@ import {
 import AdminLayout from "../components/AdminLayout";
 import "./styles/AdminDashboard.css";
 
+
 const COLORS = ["#10b981", "#3b82f6", "#ef4444"]; // Completed, InProgress, Pending
 
 const AdminDashboard = () => {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
-
+  const [adminName, setAdminName] = useState("");
   const [students, setStudents] = useState([]);
   const [analytics, setAnalytics] = useState(null);
   const [monthlyData, setMonthlyData] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState("ALL");
-
+ 
   useEffect(() => {
     fetchStudents();
     fetchAnalytics();
     fetchMonthlyAnalytics();
+    fetchProfile(); 
   }, []);
 
   const fetchStudents = async () => {
@@ -48,6 +50,18 @@ const AdminDashboard = () => {
     }
   };
 
+  const fetchProfile = async () => {
+  try {
+    const res = await axios.get(
+      "http://localhost:5000/api/user/profile",
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+    setAdminName(res.data.username);
+  } catch (error) {
+    console.error("Error fetching admin profile", error);
+  }
+};
   const fetchAnalytics = async () => {
     try {
       const res = await axios.get(
@@ -56,7 +70,9 @@ const AdminDashboard = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
+      console.log("Analytics API response:", res.data);
       setAnalytics(res.data);
+     
     } catch (error) {
       console.error(error);
     }
@@ -109,6 +125,11 @@ const AdminDashboard = () => {
         <div className="header-content">
           <h2 className="dashboard-title">Admin Dashboard</h2>
           <p className="dashboard-subtitle">Overview of student progress and tasks.</p>
+ <p className="admin-name">
+  Welcome back,{" "}
+  <strong text-blue>{(adminName || "Admin").toUpperCase()}</strong>
+  {" "}! Here's what's happening today.
+</p>
 
           <div className="filter-wrapper">
             <select

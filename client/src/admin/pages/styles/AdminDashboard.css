@@ -27,7 +27,9 @@
   margin-top: 16px;
   /* Standard shadow */
 }
-
+.admin-name strong{
+  color:#2563eb;
+}
 .student-filter {
   padding: 8px 16px;
   border: none;
@@ -61,7 +63,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 120px;
+  min-height: 50px;
 }
 
 .stat-card:hover {

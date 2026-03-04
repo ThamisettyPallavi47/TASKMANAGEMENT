@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 6px;
   /* Standard: 30px */
   padding-right: 0;
   /* Remove unnecessary padding */
@@ -61,7 +61,7 @@
   font-size: 36px;
   font-weight: 700;
   color: #111827;
-  margin: 12px 0 0 0;
+  margin-top: auto;
   line-height: 1;
 }
 
@@ -76,13 +76,15 @@
 
 .stat-sub {
   font-size: 12px;
-  color: #6b7280;
-  margin-top: auto;
+  /* color: #6b7280; */
+  /* margin-top: auto; */
+  margin-bottom: auto;
 }
 
-.trend-arrow {
+/* .trend-arrow {
   font-size: 14px;
-}
+  
+} */
 
 /* Colors & Borders */
 .border-purple {
