@@ -1,15 +1,8 @@
-// import axios from "axios";
 
-// const API = "http://localhost:5000/api/auth";
-
-// const signup = (data) => axios.post(`${API}/signup`, data);
-// const login = (data) => axios.post(`${API}/login`, data);
-
-// export default { signup, login };
 
 import axios from "axios";
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://taskmanagement-w3gy.onrender.com/api/auth";
 
 const login = (data) => axios.post(`${API}/login`, data);
 const signup = (data) => axios.post(`${API}/signup`, data);

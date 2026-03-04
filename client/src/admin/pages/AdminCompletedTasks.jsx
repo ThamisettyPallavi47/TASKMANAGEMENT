@@ -1,109 +1,4 @@
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import AdminLayout from "../components/AdminLayout";
-// import "./styles/AdminCompletedTasks.css";
 
-// const AdminCompletedTasks = () => {
-//   const token = localStorage.getItem("token");
-
-//   const [tasks, setTasks] = useState([]);
-//   const [students, setStudents] = useState([]);
-//   const [studentFilter, setStudentFilter] = useState("ALL");
-
-//   useEffect(() => {
-//     fetchCompletedTasks();
-//     fetchStudents();
-//   }, []);
-
-//   /* ================= FETCH COMPLETED TASKS ================= */
-//   const fetchCompletedTasks = async () => {
-//     const res = await axios.get("http://localhost:5000/api/admin/tasks", {
-//       headers: { Authorization: `Bearer ${token}` },
-//     });
-
-//     const completed = res.data.filter((t) => t.progress === 100);
-//     setTasks(completed);
-//   };
-
-//   /* ================= FETCH STUDENTS ================= */
-//   const fetchStudents = async () => {
-//     const res = await axios.get("http://localhost:5000/api/admin/students", {
-//       headers: { Authorization: `Bearer ${token}` },
-//     });
-//     setStudents(res.data);
-//   };
-
-//   /* ================= DELETE TASK ================= */
-//   const handleDelete = async (id) => {
-//     if (!window.confirm("Delete this completed task?")) return;
-
-//     await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
-//       headers: { Authorization: `Bearer ${token}` },
-//     });
-
-//     fetchCompletedTasks();
-//   };
-
-//   /* ================= FILTER ================= */
-//   const filteredTasks =
-//     studentFilter === "ALL"
-//       ? tasks
-//       : tasks.filter((t) => t.studentId === studentFilter);
-
-//   return (
-//     <AdminLayout>
-//       <h2 className="page-title">Completed Admin Tasks</h2>
-
-//       {/* ================= FILTER ================= */}
-//       <div className="admin-completed-filter">
-//         <select
-//           value={studentFilter}
-//           onChange={(e) => setStudentFilter(e.target.value)}
-//         >
-//           <option value="ALL">All Students</option>
-//           {students.map((s) => (
-//             <option key={s._id} value={s.studentId}>
-//               {s.studentId} - {s.username}
-//             </option>
-//           ))}
-//         </select>
-//       </div>
-
-//       {/* ================= TASK LIST ================= */}
-//       <div className="completed-task-grid">
-//         {filteredTasks.length === 0 && (
-//           <p className="no-task">No completed tasks available</p>
-//         )}
-
-//         {filteredTasks.map((task) => (
-//           <div key={task._id} className="completed-task-card fade-in">
-//             <div className="completed-header">
-//               <h4>{task.title}</h4>
-//               <button
-//                 className="delete-btn"
-//                 onClick={() => handleDelete(task._id)}
-//               >
-//                 Delete
-//               </button>
-//             </div>
-
-//             <p>{task.description}</p>
-
-//             <p className="student-id">
-//               Student: <strong>{task.studentId}</strong>
-//             </p>
-
-//             <p className="completed-date">
-//               Completed on: {task.endDate}
-//             </p>
-//           </div>
-//         ))}
-//       </div>
-//     </AdminLayout>
-//   );
-// };
-
-// export default AdminCompletedTasks;
 
 
 import { useEffect, useState } from "react";
@@ -144,7 +39,7 @@ const AdminCompletedTasks = () => {
   useEffect(() => {
     const fetchCompletedTasks = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/tasks", {
+        const res = await axios.get("https://taskmanagement-w3gy.onrender.com/api/admin/tasks", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -158,7 +53,7 @@ const AdminCompletedTasks = () => {
     const fetchStudents = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/admin/students",
+          "https://taskmanagement-w3gy.onrender.com/api/admin/students",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

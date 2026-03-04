@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./authHeader";
 
-const API = "http://localhost:5000/api/user";
+const API = "https://taskmanagement-w3gy.onrender.com/api/user";
 
 const getProfile = () =>
   axios.get(`${API}/profile`, { headers: authHeader() });

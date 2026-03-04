@@ -42,7 +42,7 @@ const AdminAnalytics = () => {
   const fetchAnalytics = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/analytics/admin",
+        "https://taskmanagement-w3gy.onrender.com/api/analytics/admin",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setData(res.data);

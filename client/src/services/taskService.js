@@ -4,7 +4,7 @@
 import axios from "axios";
 import authHeader from "./authHeader";
 
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = "https://taskmanagement-w3gy.onrender.com/api/tasks";
 
 const addTask = (taskData) => {
   return axios.post(`${API_URL}/add`, taskData, {

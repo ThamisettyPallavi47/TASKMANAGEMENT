@@ -17,7 +17,7 @@ const AdminTaskSummaryView = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/admin/tasks", {
+      .get("https://taskmanagement-w3gy.onrender.com/api/admin/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setTasks(res.data));

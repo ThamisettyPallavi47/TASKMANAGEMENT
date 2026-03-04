@@ -41,7 +41,7 @@ const AdminDashboard = () => {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/students", {
+      const res = await axios.get("https://taskmanagement-w3gy.onrender.com/api/admin/students", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStudents(res.data);
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
   const fetchProfile = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/user/profile",
+      "https://taskmanagement-w3gy.onrender.com/api/user/profile",
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
   const fetchAnalytics = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/analytics/admin",
+        "https://taskmanagement-w3gy.onrender.com//analytics/admin",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
   const fetchMonthlyAnalytics = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/admin/analytics/admin/monthly",
+        "https://taskmanagement-w3gy.onrender.com/api/admin/analytics/admin/monthly",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMonthlyData(res.data);

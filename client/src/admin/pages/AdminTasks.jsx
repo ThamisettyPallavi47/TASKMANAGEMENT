@@ -33,7 +33,7 @@ const AdminTasks = () => {
   /* ================= FETCH TASKS ================= */
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/tasks", {
+      const res = await axios.get("https://taskmanagement-w3gy.onrender.com/api/admin/tasks", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -45,7 +45,7 @@ const AdminTasks = () => {
   /* ================= FETCH STUDENTS ================= */
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/students", {
+      const res = await axios.get("https://taskmanagement-w3gy.onrender.com/api/admin/students", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStudents(res.data);
@@ -58,7 +58,7 @@ const AdminTasks = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this task?")) return;
 
-    await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+    await axios.delete(`https://taskmanagement-w3gy.onrender.com/api/tasks/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

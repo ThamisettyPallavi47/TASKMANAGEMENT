@@ -30,7 +30,7 @@ const AssignTask = () => {
   /* ================= FETCH STUDENTS ================= */
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/admin/students", {
+      .get("https://taskmanagement-w3gy.onrender.com/admin/students", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setStudents(res.data))
@@ -89,7 +89,7 @@ const AssignTask = () => {
       await Promise.all(
         form.studentIds.map((studentId) =>
           axios.post(
-            "http://localhost:5000/api/admin/assign-task",
+            "https://taskmanagement-w3gy.onrender.com/admin/assign-task",
             {
               title: form.title,
               description: form.description,

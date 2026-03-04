@@ -76,7 +76,7 @@ const AdminSettings = () => {
   /* ================= FETCH PROFILE ================= */
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/user/profile", {
+      .get("https://taskmanagement-w3gy.onrender.com/api/user/profile", {
         headers: authHeader(),
       })
       .then((res) => setProfile(res.data))
@@ -97,7 +97,7 @@ const AdminSettings = () => {
   const handleProfileSave = async () => {
     try {
       await axios.put(
-        "http://localhost:5000/api/user/profile",
+        "https://taskmanagement-w3gy.onrender.com//user/profile",
         profile,
         { headers: authHeader() }
       );
@@ -129,7 +129,7 @@ const AdminSettings = () => {
 
     try {
       await axios.put(
-        "http://localhost:5000/api/user/change-password",
+        "https://taskmanagement-w3gy.onrender.com/user/change-password",
         {
           oldPassword: passwordForm.oldPassword,
           newPassword: passwordForm.newPassword,
