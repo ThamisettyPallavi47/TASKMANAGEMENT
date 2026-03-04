@@ -1,18 +1,19 @@
+
 // import axios from "axios";
+// import authHeader from "./authHeader";
 
-// const STUDENT_ID = "student123";
+// const API_URL = "https://taskmanagement-w3gy.onrender.com/api/analytics";
 
-// const getStudentAnalytics = () => {
-//   return axios.get(
-//     `http://localhost:5000/api/analytics/student/${STUDENT_ID}`
-//   );
+// const getStudentAnalytics = (type = "ALL") => {
+//   return axios.get(`${API_URL}/student?type=${type}`, {
+//     headers: authHeader(),   // ✅ CRITICAL FIX
+//   });
 // };
 
 // export default {
 //   getStudentAnalytics,
 // };
 
-// client/src/services/analyticsService.js
 import axios from "axios";
 import authHeader from "./authHeader";
 
@@ -20,10 +21,12 @@ const API_URL = "https://taskmanagement-w3gy.onrender.com/api/analytics";
 
 const getStudentAnalytics = (type = "ALL") => {
   return axios.get(`${API_URL}/student?type=${type}`, {
-    headers: authHeader(),   // ✅ CRITICAL FIX
+    headers: authHeader(),
   });
 };
 
-export default {
+const analyticsService = {
   getStudentAnalytics,
 };
+
+export default analyticsService;
