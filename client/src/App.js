@@ -1,6 +1,7 @@
 
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import studentRoutes from "./student/studentRoutes";
 import adminRoutes from "./admin/adminRoutes";
 import Login from "./auth/Login";
@@ -50,8 +51,8 @@ function App() {
                 ))}
 
                 {/* ================= DEFAULT ================= */}
-                <Route path="/" element={<Navigate to="/login" />} />
-                <Route path="*" element={<Navigate to="/login" />} />
+                <Route path="/" element={<Navigate to="/login"  replace/>} />
+                <Route path="*" element={<Navigate to="/login" replace/>} />
             </Routes>
             <Footer />
             <ChatWidget />
