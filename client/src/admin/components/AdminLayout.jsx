@@ -1,41 +1,4 @@
-// import { useNavigate } from "react-router-dom";
-// import "./AdminLayout.css";
 
-// const AdminLayout = ({ children }) => {
-//   const navigate = useNavigate();
-
-//   return (
-//     <div className="dashboard-container">
-//       {/* SIDEBAR */}
-//       <aside className="sidebar">
-//         <h2 className="logo">Admin</h2>
-
-//         <ul className="menu">
-//           <li className="active" onClick={() => navigate("/admin")}>
-//             Dashboard
-//           </li>
-//           <li onClick={() => navigate("/admin/students")}>Students</li>
-//           <li onClick={() => navigate("/admin/assign-task")}>Assign Task</li>
-//           <li onClick={() => navigate("/admin/tasks")}>Tasks</li>
-//           <li onClick={() => navigate("/admin/analytics")}>Analytics</li>
-//           <li onClick={() => navigate("/admin/settings")}>Settings</li>
-//         </ul>
-
-//         <button
-//           className="add-task-btn"
-//           onClick={() => navigate("/admin/assign-task")}
-//         >
-//           + Assign Task
-//         </button>
-//       </aside>
-
-//       {/* MAIN CONTENT */}
-//       <main className="main-content">{children}</main>
-//     </div>
-//   );
-// };
-
-// export default AdminLayout;
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,

@@ -30,17 +30,28 @@ const Footer = () => {
             {/* Right Side: Social Media Icons (SVG) */}
             <div className="footer-right">
                 {/* Facebook */}
-                <a href="#" className="social-btn">
+                {/* <a href="#" className="social-btn">
                     <Facebook className="social-icon" />
                 </a>
-                {/* Twitter / X */}
+                
                 <a href="#" className="social-btn">
                     <Twitter className="social-icon" />
                 </a>
-                {/* LinkedIn */}
+               
                 <a href="#" className="social-btn">
-                    <Linkedin className="social-icon" />
-                </a>
+                    <Linkedin className="social-icon" /> */}
+                {/* </a> */}
+                <a href="https://facebook.com" className="social-btn" target="_blank" rel="noopener noreferrer">
+    <Facebook className="social-icon" />
+</a>
+
+<a href="https://twitter.com" className="social-btn" target="_blank" rel="noopener noreferrer">
+    <Twitter className="social-icon" />
+</a>
+
+<a href="https://linkedin.com" className="social-btn" target="_blank" rel="noopener noreferrer">
+    <Linkedin className="social-icon" />
+</a>
             </div>
         </footer>
     );
