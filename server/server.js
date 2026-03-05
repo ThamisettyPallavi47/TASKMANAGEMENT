@@ -11,10 +11,13 @@ const app = express();
 // --------------------
 // CORS configuration - Allow frontend (localhost:3000) to access backend
 app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true,
+  origin: ["http://localhost:3000",
+  "https://thamisettypallavi47.github.io",
+  "https://thamisettypallavi47.github.io/TASKMANAGEMENT"
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
 app.use(express.json());
 
@@ -66,7 +69,8 @@ process.on("unhandledRejection", (reason, promise) => {
 // --------------------
 // Start server
 // --------------------
-const PORT = 5000;
+// const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Chat API → http://localhost:${PORT}/api/chat`);
