@@ -24,11 +24,12 @@ const AdminTasks = () => {
   const [statusFilter, setStatusFilter] = useState("ALL");
   const [search, setSearch] = useState("");
 
+
   useEffect(() => {
     fetchTasks();
     fetchStudents();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    }, []);
 
   /* ================= FETCH TASKS ================= */
   const fetchTasks = async () => {
@@ -96,10 +97,7 @@ const AdminTasks = () => {
     completed: tasks.filter((t) => t.progress === 100).length, // Completed from ALL tasks (today's logic mock)
   };
 
-  // const getStudentName = (id) => {
-  //   const s = students.find(stud => stud.studentId === id);
-  //   return s ? s.username : id;
-  // }
+ 
 
   return (
     <AdminLayout>

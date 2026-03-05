@@ -6,7 +6,7 @@ import {
   Users,
   Zap,
   UserPlus,
-  MoreVertical,
+  MoreVertical
 
 } from "lucide-react";
 import AdminLayout from "../components/AdminLayout";
