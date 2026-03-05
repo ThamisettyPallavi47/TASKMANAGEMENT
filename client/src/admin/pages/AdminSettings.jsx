@@ -97,7 +97,7 @@ const AdminSettings = () => {
   const handleProfileSave = async () => {
     try {
       await axios.put(
-        "https://taskmanagement-w3gy.onrender.com//user/profile",
+        "https://taskmanagement-w3gy.onrender.com/api/user/profile",
         profile,
         { headers: authHeader() }
       );
@@ -129,7 +129,7 @@ const AdminSettings = () => {
 
     try {
       await axios.put(
-        "https://taskmanagement-w3gy.onrender.com/user/change-password",
+        "https://taskmanagement-w3gy.onrender.com/api/user/change-password",
         {
           oldPassword: passwordForm.oldPassword,
           newPassword: passwordForm.newPassword,
