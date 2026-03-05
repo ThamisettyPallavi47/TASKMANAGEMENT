@@ -18,7 +18,6 @@ import {
   Clock,
   RefreshCcw,
   CheckCircle2,
-  Calendar,
 } from "lucide-react";
 import AdminLayout from "../components/AdminLayout";
 import "./styles/AdminAnalytics.css";
@@ -31,12 +30,12 @@ const AdminAnalytics = () => {
 
   const [data, setData] = useState(null);
   const [selectedStudent, setSelectedStudent] = useState("ALL");
-  const [statusFilter, setStatusFilter] = useState("ALL");
-  // Mock date range for display
-  const [dateRange, setDateRange] = useState("Oct 1, 2023 - Oct 31, 2023");
+  const [statusFilter] = useState("ALL");
+  
 
   useEffect(() => {
     fetchAnalytics();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchAnalytics = async () => {
@@ -53,7 +52,7 @@ const AdminAnalytics = () => {
 
   if (!data) return null;
 
-  const { adminSummary, studentWiseAdminTasks } = data;
+  const {studentWiseAdminTasks } = data;
 
   /* ================= FILTERED DATA ================= */
   let filteredStudents =

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./StudentProfile.css";
 
 const StudentProfile = () => {
     const [studentName, setStudentName] = useState("Student");
     const [studentDetails, setStudentDetails] = useState(null);
     const [showDetails, setShowDetails] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProfile = async () => {

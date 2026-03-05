@@ -7,8 +7,7 @@ import {
   Zap,
   UserPlus,
   MoreVertical,
-  LayoutGrid, // Dashboard icon for sidebar if needed, but not used here
-  FileText // Tasks icon
+
 } from "lucide-react";
 import AdminLayout from "../components/AdminLayout";
 import StatsCard from "../components/StatsCard";
@@ -33,6 +32,7 @@ const Students = () => {
   useEffect(() => {
     fetchStudents();
     fetchAdminTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchStudents = async () => {

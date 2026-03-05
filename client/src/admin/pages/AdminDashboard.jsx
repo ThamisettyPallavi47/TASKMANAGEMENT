@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ClipboardList, TrendingUp, AlertCircle, CheckCircle } from "lucide-react";
+// import { ClipboardList, TrendingUp, AlertCircle, CheckCircle } from "lucide-react";
 
 import {
   PieChart,
@@ -37,6 +37,7 @@ const AdminDashboard = () => {
     fetchAnalytics();
     fetchMonthlyAnalytics();
     fetchProfile(); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchStudents = async () => {

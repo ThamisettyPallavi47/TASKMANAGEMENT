@@ -6,7 +6,6 @@ import {
   Trash2,
   Search,
   RefreshCcw,
-  AlertCircle,
   CheckCircle2
 } from "lucide-react";
 import AdminLayout from "../components/AdminLayout";
@@ -28,6 +27,7 @@ const AdminTasks = () => {
   useEffect(() => {
     fetchTasks();
     fetchStudents();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* ================= FETCH TASKS ================= */
@@ -96,10 +96,10 @@ const AdminTasks = () => {
     completed: tasks.filter((t) => t.progress === 100).length, // Completed from ALL tasks (today's logic mock)
   };
 
-  const getStudentName = (id) => {
-    const s = students.find(stud => stud.studentId === id);
-    return s ? s.username : id;
-  }
+  // const getStudentName = (id) => {
+  //   const s = students.find(stud => stud.studentId === id);
+  //   return s ? s.username : id;
+  // }
 
   return (
     <AdminLayout>

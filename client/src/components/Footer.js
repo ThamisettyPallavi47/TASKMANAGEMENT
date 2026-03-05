@@ -2,9 +2,9 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Footer.css';
 import logoCircle from '../assets/logo-circle.png';
-import logoText from '../assets/logo-text.png';
+// import logoText from '../assets/logo-text.png';
 
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin } from "lucide-react"
 
 const Footer = () => {
     const location = useLocation();
