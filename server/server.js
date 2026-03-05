@@ -12,6 +12,7 @@ const app = express();
 // CORS configuration - Allow frontend (localhost:3000) to access backend
 app.use(cors({
   origin: ["http://localhost:3000",
+    "https://taskmanagement-9ssg.vercel.app", 
   "https://thamisettypallavi47.github.io",
   "https://thamisettypallavi47.github.io/TASKMANAGEMENT"
   ],
