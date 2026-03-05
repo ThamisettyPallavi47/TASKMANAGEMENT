@@ -12,9 +12,7 @@ const app = express();
 // CORS configuration - Allow frontend (localhost:3000) to access backend
 // app.use(cors({
 //   origin: ["http://localhost:3000",
-//     "https://taskmanagement-9ssg.vercel.app", 
-//   "https://thamisettypallavi47.github.io",
-//   "https://thamisettypallavi47.github.io/TASKMANAGEMENT"
+//     "https://taskmanagement-9ssg.vercel.app"
 //   ],
 //   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 //   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -25,15 +23,26 @@ const app = express();
 // --------------------
 // Middleware
 // --------------------
-const corsOptions = {
-  origin: true,
-  credentials: true,
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://taskmanagement-9ssg.vercel.app"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-};
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
 
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+// IMPORTANT: handle preflight requests
+app.options("*", cors({
+  origin: [
+    "http://localhost:3000",
+    "https://taskmanagement-9ssg.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
 
 app.use(express.json());
 
