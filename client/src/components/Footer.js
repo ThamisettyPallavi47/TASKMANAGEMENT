@@ -29,18 +29,6 @@ const Footer = () => {
 
             {/* Right Side: Social Media Icons (SVG) */}
             <div className="footer-right">
-                {/* Facebook */}
-                {/* <a href="#" className="social-btn">
-                    <Facebook className="social-icon" />
-                </a>
-                
-                <a href="#" className="social-btn">
-                    <Twitter className="social-icon" />
-                </a>
-               
-                <a href="#" className="social-btn">
-                    <Linkedin className="social-icon" /> */}
-                {/* </a> */}
                 <a href="https://facebook.com" className="social-btn" target="_blank" rel="noopener noreferrer">
     <Facebook className="social-icon" />
 </a>
