@@ -409,12 +409,12 @@ see here the work progress card has to increase the work status has to place rig
 }
 
 /* Row 2, Col 2: Status Box */
-.status-box-modern h3 {
+/* .status-box-modern h3 {
     margin: 0 0 24px 0;
     font-size: 18px;
     font-weight: 700;
     color: #1e293b;
-}
+} */
 
 .status-toggle-row {
     display: flex;
@@ -555,9 +555,9 @@ input:checked+.slider:before {
 }
 /* ================= WORK PROGRESS ================= */
 
-.work-progress-section {
+/* .work-progress-section {
     margin-bottom: 30px;
-}
+} */
 
 .work-progress-header {
     text-align: center;
@@ -574,11 +574,7 @@ margin-bottom:20px;
     color: #1e293b;
 }
 
-.work-progress-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
+
 
 .progress-task-card {
     background: #fff;
@@ -633,31 +629,82 @@ margin-bottom:20px;
 
 /* ===== WORK PROGRESS + STATUS LAYOUT ===== */
 
- .progress-status-wrapper{
+ /* .progress-status-wrapper{
     display:grid;
     grid-template-columns: 3fr 1fr;
     gap:28px;
     width:100%;
     align-items:start;
-}
+} */
 
 /* Work Progress section takes full left side */
 
-.work-progress-section{
+/* .work-progress-section{
     width:100%;
-}
+} */
 
 /* 2x2 cards */
 
-.work-progress-grid{
+/* .work-progress-grid{
     display:grid;
     grid-template-columns: repeat(2,1fr);
     gap:20px;
-}
+} */
 
 /* Working status fixed width */
 
-.status-box-modern{
+/* .status-box-modern{
     width:100%;
     max-width:320px;
+} */
+
+/* ===== WORK PROGRESS + STATUS SECTION ===== */
+
+.progress-status-wrapper{
+    grid-column: span 3;            /* occupy 2 columns of main grid */
+    display:grid;
+    grid-template-columns: 2fr 1fr; /* left tasks, right status */
+    gap:32px;
+    padding:14px;
+}
+
+/* WORK PROGRESS */
+
+.work-progress-section{
+    display:flex;
+    flex-direction:column;
+}
+
+.work-progress-header{
+    text-align:center;
+    margin-bottom:14px;
+}
+
+.work-progress-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(2,1fr);
+    gap:14px;
+}
+
+/* TASK CARDS */
+
+.progress-task-card{
+    background:#fff;
+    border-radius:6px;
+    padding:12px;
+    min-height:20px;
+    display:flex;
+    flex-direction:column;
+    /* justify-content:space-between; */
+    box-shadow:0 6px 14px rgba(0,0,0,0.06);
+}
+
+/* WORKING STATUS */
+
+.status-box-modern{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;  /* push to bottom */
+    align-items:center;
 }
