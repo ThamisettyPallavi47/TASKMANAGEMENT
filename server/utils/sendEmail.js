@@ -1,65 +1,70 @@
+
+
 // const nodemailer = require("nodemailer");
 
-// const sendEmail = async (options) => {
-//     const transporter = nodemailer.createTransport({
-//         service: "gmail",
-//         auth: {
-//             user: process.env.EMAIL_USERNAME, // We will need these in .env
-//             pass: process.env.EMAIL_PASSWORD,
-//         },
-//     });
+// const transporter = nodemailer.createTransport({
+//   host: "smtp.gmail.com",
+//   port: 465,
+//   secure: true,
+//   auth: {
+//     user: process.env.EMAIL_USERNAME,
+//     pass: process.env.EMAIL_PASSWORD,
+//   },
+// });
 
+// // Verify connection when server starts
+// transporter.verify((error) => {
+//   if (error) {
+//     console.log("❌ SMTP CONNECTION ERROR:", error);
+//   } else {
+//     console.log("✅ SMTP SERVER READY");
+//   }
+// });
+
+// const sendEmail = async (options) => {
+//   try {
 //     const mailOptions = {
-//         from: process.env.EMAIL_FROM || "noreply@studiin.com",
-//         to: options.email,
-//         subject: options.subject,
-//         html: options.message,
+//       from: `"StudiIn" <${process.env.EMAIL_USERNAME}>`,
+//       to: options.email,
+//       subject: options.subject,
+//       html: options.message,
 //     };
 
-//     try {
-//         await transporter.sendMail(mailOptions);
-//         console.log("Email sent successfully to:", options.email);
-//     } catch (error) {
-//         console.log("------------------------------------------");
-//         console.log("⚠️ EMAIL SENDING FAILED (Likely missing credentials in .env)");
-//         console.log("⚠️ DEV MODE: Printing Email Content Below:");
-//         console.log(`To: ${options.email}`);
-//         console.log(`Subject: ${options.subject}`);
-//         console.log(`Message: ${options.message}`);
-//         console.log("------------------------------------------");
-//         // Don't throw error in dev mode so flow continues
-//     }
+//     console.log("📧 Sending email to:", options.email);
+
+//     await transporter.sendMail(mailOptions);
+
+//     console.log("✅ Email sent successfully to:", options.email);
+//   } catch (error) {
+//     console.error("❌ Email sending failed:", error);
+//     throw error;
+//   }
 // };
 
 // module.exports = sendEmail;
 
+const { Resend } = require("resend");
 
-const nodemailer = require("nodemailer");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async (options) => {
+  try {
 
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: process.env.EMAIL_USERNAME,
-            pass: process.env.EMAIL_PASSWORD
-        }
+    console.log("📧 Sending email to:", options.email);
+
+    const response = await resend.emails.send({
+      from: process.env.EMAIL_FROM || "StudiIn <onboarding@resend.dev>",
+      to: options.email,
+      subject: options.subject,
+      html: options.message,
     });
 
-    const mailOptions = {
-        from: process.env.EMAIL_USERNAME,
-        to: options.email,
-        subject: options.subject,
-        html: options.message
-    };
+    console.log("✅ Email sent successfully:", response);
 
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log("✅ Email sent successfully to:", options.email);
-    } catch (error) {
-        console.error("❌ Email sending failed:", error);
-        throw error; // important so backend shows error
-    }
+  } catch (error) {
+    console.error("❌ Email sending failed:", error);
+    throw error;
+  }
 };
 
 module.exports = sendEmail;

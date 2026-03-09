@@ -664,7 +664,7 @@ margin-bottom:20px;
     grid-column: span 3;            /* occupy 2 columns of main grid */
     display:grid;
     grid-template-columns: 2fr 1fr; /* left tasks, right status */
-    gap:32px;
+    gap:12px;
     padding:14px;
 }
 
@@ -691,9 +691,9 @@ margin-bottom:20px;
 
 .progress-task-card{
     background:#fff;
-    border-radius:6px;
+    border-radius:16px;
     padding:12px;
-    min-height:20px;
+    min-height:10px;
     display:flex;
     flex-direction:column;
     /* justify-content:space-between; */
@@ -701,6 +701,10 @@ margin-bottom:20px;
 }
 
 /* WORKING STATUS */
+.progress-task-card:hover{
+    transform: translateY(-6px);
+    box-shadow:0 12px 24px rgba(0,0,0,0.12);
+}
 
 .status-box-modern{
     display:flex;

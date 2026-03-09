@@ -6,19 +6,7 @@ const connectDB = require("./config/db");
 
 const app = express();
 
-// --------------------
-// Middleware
-// --------------------
-// CORS configuration - Allow frontend (localhost:3000) to access backend
-// app.use(cors({
-//   origin: ["http://localhost:3000",
-//     "https://taskmanagement-9ssg.vercel.app"
-//   ],
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'],
-//   credentials: true,
-// }));
-// app.use(express.json());
+
 
 // --------------------
 // Middleware
