@@ -13,32 +13,60 @@ const Login = () => {
     studentId: "",
     password: "",
   });
-
+const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrorMessage("");
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setErrorMessage("");
 
-    try {
-      const res = await authService.login(form);
+  //   try {
+  //     const res = await authService.login(form);
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.user.role);
-      localStorage.setItem("username", res.data.user.username); 
+  //     localStorage.setItem("token", res.data.token);
+  //     localStorage.setItem("role", res.data.user.role);
+  //     localStorage.setItem("username", res.data.user.username); 
 
-      if (res.data.user.role === "admin") {
-        navigate("/admin");
-      } else {
-        navigate("/student");
-      }
-    } catch (err) {
-      setErrorMessage(
-        err.response?.data?.message || "Login failed"
-      );
+  //     if (res.data.user.role === "admin") {
+  //       navigate("/admin");
+  //     } else {
+  //       navigate("/student");
+  //     }
+  //   } catch (err) {
+  //     setErrorMessage(
+  //       err.response?.data?.message || "Login failed"
+  //     );
+  //   }
+  // };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (loading) return;
+
+  setLoading(true);
+  setErrorMessage("");
+
+  try {
+    const res = await authService.login(form);
+
+    localStorage.setItem("token", res.data.token);
+    localStorage.setItem("role", res.data.user.role);
+    localStorage.setItem("username", res.data.user.username);
+
+    if (res.data.user.role === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/student");
     }
-  };
+
+  } catch (err) {
+    setErrorMessage(err.response?.data?.message || "Login failed");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="modern-auth-container">
@@ -131,7 +159,10 @@ const Login = () => {
                 <Link to="/forgot-password" className="forgot-password">Forgot Password?</Link>
               </div>
 
-              <button type="submit" className="login-btn">Login</button>
+              {/* <button type="submit" className="login-btn">Login</button> */}
+              <button type="submit" className="login-btn" disabled={loading}>
+  {loading ? "Logging in..." : "Login"}
+</button>
             </form>
 
             <div className="auth-footer">

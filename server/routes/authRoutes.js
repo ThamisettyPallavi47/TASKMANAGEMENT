@@ -167,6 +167,7 @@ router.post("/signup", async (req, res) => {
 
 /* ================= LOGIN ================= */
 router.post("/login", async (req, res) => {
+  console.log("LOGIN REQUEST RECEIVED");
   try {
     const { studentId, password } = req.body;
 
