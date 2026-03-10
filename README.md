@@ -7,12 +7,10 @@ This system helps students organize assignments, track deadlines, and improve pr
 
 ## 🚀 Project Overview
 
-```
 Student productivity and time management are major challenges in modern academic environments due to multiple assignments, deadlines, and responsibilities. Traditional methods like notebooks or simple reminders lack real-time tracking and analytics.
 
 The Smart Student Productivity & Task Management System provides a centralized web platform where students and administrators can manage tasks, visualize productivity patterns, and improve academic performance through data-driven insights. 
-```
-
+ 
 ## ✨ Key Features
 
 ### 👨‍🎓 Student Features
