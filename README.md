@@ -1,10 +1,9 @@
-## 📚 Smart Student Productivity & Task Management System
+## 📚 Studlin - Smart Student Productivity & Task Management System
 
-``` 
 A modern web-based productivity platform designed for students and administrators to manage academic tasks efficiently, monitor progress, and analyse productivity trends through interactive dashboards and analytics.
 
 This system helps students organize assignments, track deadlines, and improve productivity, while administrators can assign tasks, monitor progress, and analyse performance using real-time analytics. 
-```
+
 
 ## 🚀 Project Overview
 
