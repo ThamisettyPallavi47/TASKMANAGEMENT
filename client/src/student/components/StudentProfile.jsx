@@ -13,7 +13,7 @@ const StudentProfile = () => {
         const fetchProfile = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:5000/api/user/profile", {
+                const response = await axios.get("https://taskmanagement-w3gy.onrender.com/api/user/profile", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 if (response.data) {
