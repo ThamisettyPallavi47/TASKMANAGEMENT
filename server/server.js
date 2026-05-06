@@ -15,7 +15,11 @@ app.use(cors({
   origin: [
     "http://localhost:3000",
     "https://taskmanagement-9ssg.vercel.app",
-    "https://thamisettypallavi47.github.io"
+    "https://thamisettypallavi47.github.io",
+    "https://d18158feqtz58q.cloudfront.net",
+    "http://student-name.s3-website.ap-south-1.amazonaws.com",
+    "https://student-name.s3.ap-south-1.amazonaws.com"
+
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
